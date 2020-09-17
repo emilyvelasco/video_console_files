@@ -1,6 +1,6 @@
-  
 #!/bin/bash
-while [[ 1 ]]
+
+while [ 1 == 1 ]
 do
-/usr/bin/python /home/pi/Downloads/shufflevideo.py
+/usr/bin/X
 done
