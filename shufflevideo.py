@@ -5,6 +5,9 @@ import os
 from subprocess import Popen
 import time
 import random
+from gpiozero import LED
+led=LED(22)
+led.on()
 
 movie1 = ("/home/pi/Videos/video1.mp4")
 movie2 = ("/home/pi/Videos/video2.mp4")
@@ -91,7 +94,7 @@ def button_handler(movie_list):
 
 # experiment with hold time here
 # also with bounce time
-button = gpiozero.Button(pin=17, pull_up=False, bounce_time=.03)
+button = gpiozero.Button(pin=17, pull_up=False, hold_time= 0.01, bounce_time=.01)
 button.when_pressed = button_handler(movie_list)
 
 while(True):
